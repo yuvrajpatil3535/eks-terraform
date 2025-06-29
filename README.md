@@ -34,6 +34,14 @@ Run `terraform plan` to see the configuration it creates when executed.
 
 `terraform apply`
 
+## After creation of cluster apply commands like 
+'kubectl apply -f deployment.yaml'
+'kubectl apply -f service.yaml'
+
+## To show nodes and get external ip address 
+'kubectl get nodes'
+'kubectl get svc' 
+
 How to avoide errors for seamless deployment of pods 
 1) After cluster creation, the kubectl get nodes willnot run .. To run smoothly You need to go to AWS console - EKS cluster - Access - Add permissions - add EKSClusterADminPolicy and attach it to it .
 2) If your control plane instance and eks cluster is in different regions errors will occure while creation of cluster .. you need to attach aws-auth as Configmap for that so keet everything in same region.
