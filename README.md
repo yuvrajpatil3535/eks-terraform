@@ -33,3 +33,8 @@ Run `terraform plan` to see the configuration it creates when executed.
 ### Finally, Apply terraform configuation to create EKS cluster with VPC 
 
 `terraform apply`
+
+How to avoide errors for seamless deployment of pods 
+1) After cluster creation, the kubectl get nodes willnot run .. To run smoothly You need to go to AWS console - EKS cluster - Access - Add permissions - add EKSClusterADminPolicy and attach it to it .
+2) If your control plane instance and eks cluster is in different regions errors will occure while creation of cluster .. you need to attach aws-auth as Configmap for that so keet everything in same region.
+3) Always check the AWS Providers versions are compatible with terraform modules otherwise error will occure after you type terraform init on console.
